@@ -12,8 +12,11 @@ on:
     types:
       - completed
 
+permissions:
+  contents: write
+
 jobs:
   workflows:
     uses: hassio-addons/workflows/.github/workflows/addon-deploy.yaml@main
     secrets:
-      DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
+      DISPATCH_TOKEN: ${{ github.token }}
